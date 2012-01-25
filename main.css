@@ -1,0 +1,56 @@
+html, body, h1, h2, form, fieldset, legend, ol, ul, li {
+    margin: 0;
+    padding: 0;
+    list-style:none;
+    }
+
+h1 {
+    font-size:1.7em;
+    padding:1.0em 0.75em 0.1em 0.75em;
+    letter-spacing: 4px;
+    word-spacing: 8px;
+}
+
+h2 {
+    font-size:1.2em;
+    padding:0em 0.75em 1em 0.75em;
+    letter-spacing: 4px;
+}
+
+span.less {
+    color:rgba(0,0,0,0.1);
+    font-size:0.9em;
+}
+p { padding:1em; }
+
+
+
+body {
+    color: rgba(0,0,0,0.4);
+/*    font-family: Georgia, "Times New Roman", Times, serif;*/
+    font:1em/1.5em 'Verdana', 'Arial', sans-serif;
+    padding: 19px;
+    }
+
+@media screen and (max-width:800px) {
+    body {  font-size:0.8em;  } }
+@media screen and (max-width:400px) {
+    body { font-size:0.7em;  } }
+
+body {
+    transition:all .2s linear;
+    -o-transition:all .2s linear;
+    -moz-transition:all .2s linear;
+    -webkit-transition:all .2s linear;
+}
+
+
+#contact{
+/*    float:right;*/
+    position:absolute;
+    top:0px;
+    right:0px;
+    background-color: #f0f0f0;
+    margin: 0 15px 0 0;
+    padding: 9px 7px 9px 5px;
+}
