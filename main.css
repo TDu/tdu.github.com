@@ -30,6 +30,7 @@ body {
 ol, ul {
 	list-style: none;
 }
+ul
 blockquote, q {
 	quotes: none;
 }
@@ -45,30 +46,59 @@ table {
 /* End reset styles */
 
 body {
-    background-color:#fefefe;
+    background-color:#5a5c57;
     color:#2c2c2c;
     font: normal 100% Cambria, Georgia, Serif;
+    height:100%;
+    min-height:100%;
     }
 
+
+#mountain {
+    display: block;
+    position:absolute;
+    height:auto;
+    bottom:0;
+    top:0;
+    left:0;
+    right:0;
+    margin-top:5px;
+    background-image: url(./mountains.png);
+	background-position: center bottom;
+    background-color: #7297b4;
+	background-repeat: no-repeat;
+    min-height: 800px;
+    overflow:hidden;
+}
+
 div#page {
-    width: 860px;
-    margin: 10px auto;
-    padding: 5px;
+    width: 850px;
+    margin: 0px auto;
+    margin-top: 15px;
     position: relative;
-    border: solid 1px #d0d0d0;
+    display:block;
+    border: solid 1px #5a5c57;
+    /*height: 100%;
+    min-height: 100%;*/
+    zoom: 1;
+	/*filter: alpha(opacity=30);*/
+	/*opacity: 0.3;*/
+    /*background-color: #7297ba; /*#578ab5;*/
+    background-color: rgba(0,0,0, 0.1);
     /*background-image: url('./grid.gif')*/
+    /*border-radius: 15px;*/
 }
 
 h1 {
     font-size:3em;
     font-style:italic;
-    padding:0em 0.75em 0.1em 0.75em;
+    padding:0em 0.5em 0.1em 1em;
     letter-spacing: 4px;
     word-spacing: 8px;
 }
 
 h2 {
-    font-size:1.5em;
+    font-size:1.8em;
     padding:0em 0.75em 1em 1.75em;
     letter-spacing: 4px;
     line-height:1em;
@@ -81,71 +111,131 @@ span.less {
 p { padding:1em; }
 
 #contact{
-/*    float:right;*/
     position:absolute;
     top:0px;
     right:0px;
-    background-color: #f8f8f8;
-    margin: 15px 15px 0 0;
-    padding: 9px 7px 9px 5px;
+ /*   width:186px;*/
+    background-color: transparent;
+ /*   border: 1px #5a5c57 solid;*/
+    margin: 20px 20px 0 0;
+    padding: 9px 7px 9px 10px;
 }
 
 .myheading {
+    margin-left:5px;
 }
 
 .myheading img{
-    float:left;
+    float:right;
+    margin-right:130px;
+    margin-top:40px;
    /* clear:both;*/
 }
 .mycontent{
     /*float:left;*/
-    width:70%;
-    margin-left:100px;
+    width:65%;
+    padding-left:1em;
 }
 
 #footer{
-    color:#cdcdcd;
-    font-size:80%;
-    clear:both; }
-
-    .myheading {
-        margin-left:10%;}
-@media screen and (max-width:880px) {
-    .myheading {
-        margin-left:10%;}
-    div#page {
-        width: 95%;}
-/*
-    h1 {
-        font-size: 2.5em;
-        }
-    h2 {
-        font-size: 1.5em;
-        }
-*/
-}
+    color:#000;
+    font-size:90%;
+    position:absolute;
+    width:100%;
+    bottom: 0;
+    }
 
 ul.contact li img{
-    padding: 0.3em 1em 0em 0em;
+    padding: 0.3em 0.8em 0em 0em;
 }
 
-@media screen and (max-width:700px) {
-    .myheading {
-        margin-left:10%;}
+/*so they don't go over thier container*/
+img, embed, object, video {
+    max-width: 100%;
+}
+
+h2{
+display:block;
+}
+
+@media screen and (max-width:910px) {
     h1 {
-        font-size: 2.2em;
+        font-size: 2.5em;
+        padding: 0px 30px;
         }
     h2 {
-        font-size: 1.2em;
+        padding: 0px 30px;
+        font-size: 1.7em;
+        display:block;
         }
+    #contact{
+        /*width:220px;*/
+    }
+    div#page {
+        width: 95%;}
+    .rock {
+        width: 300px;
+        }
+    #mountain {
+    background-size: 1250px;
+    }
+    }
+
+
+@media screen and (max-width:700px) {
+/*    .contact li{
+        display:inline;
+    }
+    */#contact{
+        position: static;
+        width:100%;
+        margin: 0 0;
+        padding-left:60px;
+    }
+    
+    .myheading {
+       /* margin-left:10%;*/
+        /*margin-left:10px;*/
+    }
+    h1 {
+        font-size: 2.5em;
+        padding: 0px 30px;
+        }
+    h2 {
+        display:none;
+        }
+    .mycontent{
+        float:none;
+        width:80%;
+        margin-left:0px;
+        }
+    .rock {
+        width: 260px;
+        }
+    #mountain {
+    background-size: 1100px;
+    }
+    img.icon{
+        display:none;
+        width:100%;
+    }
 }
 
+
+/* Phone screen */
 @media screen and (max-width:480px) {
+    /*.contact li img{
+        display:none;
+    }*/
+    img.icon{
+        display:none;
+        width:100%;
+    }
     #contact{
         position: static;
+        width:100%;
+        margin: 0 0;
     }
-    .myheading img{
-        display:none;}
     .myheading{
         margin-left:0px;}
 
@@ -155,16 +245,32 @@ ul.contact li img{
         margin-left:0px;
         }
     h1 {
-        font-size: 1.9em;
+        font-size: 2.2em;
         letter-spacing: 1px;
         word-spacing: 3px;
+        padding: 0px 10px;
         }
     h2 {
-        font-size: 0.9em;
+        padding: 0px 10px;
+        font-size: 1.0em;
         }
+    div.rock {
+         width:250px;
+    }
+    #mountain {
+    background-size: 950px;
+    }
 }
 
 
+/* the rock */
+div.rock {
+    position:absolute;
+    bottom:-20px;
+    right:0px;
+    /*float: right;*/
+    /*width: 600px;*/
+}
 /*
 @media screen and (max-width:800px) {
     body {  font-size:0.8em;  } }
