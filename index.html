@@ -5,43 +5,45 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="main.css" />
 		<link rel="shortcut icon" href="favicon.ico" />
-		<title>tdu ;)</title>
+		<title>Thierry Ducrest</title>
 	</head>
 	<body>
         <div id ="mountain">
 		<div id="page">
             <div id="header">
-                <h1>Thierry Ducrest</h1>
-                <h2>Analyste programmeur</br><span class="less">parfois</span> admin. réseaux</h2>
-                <div id="contact">
+                <h1 id="fittext">Thierry Ducrest</h1>
+                <h2 id="fittext2">Analyste programmeur</h2>
+                <h2 id="fittext3"><span class="less">parfois</span> admin. réseaux</h2>
+ <div id="contact">
                     <ul class="contact">
-                        <li><img src="./email.png"/>thierry[at]ducrest.net</li>
+                        <li><img src="./email.png"/>thierry@ducrest.net</li>
                         <li><img src="./phone.png"/>079 827 8746</li>
-                        <li><img src="./world.png"/>Nyon - Suisse</li>
+                        <li class="where"><img src="./world.png"/>Nyon</li>
                     </ul>
                 </div>
             </div>
             <div id="content">
 			<div class="myheading">
-				<img class="icon" src="./nutshell.png"/>
-				<div class="mycontent">
-                    <p>Thierry Ducrest vit à Nyon (Suisse) avec son épouse et son fils de trois ans. Actuellement il est employé chez <a href="http://www.ntconsulting.ch">NT Consulting !?</a> chez qui il développe des applications Visual Basic .NET et bases de données SQL. Il participe également de la maintenance des réseaux informatiques de divers PME romandes. Il est titulaire d'un <a href="http://www.idec.ch/Formations-BFI-Presentation.htm">brevet fédéral en informatique</a>.</p>
-				</div>
+                    <p>Thierry Ducrest vit à Nyon (Suisse) avec son épouse et son fils de trois ans. Actuellement il est employé chez <a href="http://www.ntconsulting.ch">NT Consulting !?</a> où il conçoit et développe des applications .NET et bases de données SQL. Il participe également de la maintenance des réseaux informatiques de quelques PME romandes. Il est titulaire d'un <a href="http://www.idec.ch/Formations-BFI-Presentation.htm">brevet fédéral en informatique</a>.</p>
 			</div>
 			<div class="myheading">
-				<img class="icon" src="./hammer.png"/>
-				<div class="mycontent">
 					<p>Pour le dévelopement web (et toutes autres utilisations,d'ailleurs) une préférence pour GNU/Linux, pour le développement python.</p>
 					<p></p>
-				</div>
 			</div>
             </div>
         </div>
-        <div id="footer">
-            <div class="rock">
-                <img src="./rocks.png" alt=""/>
-            </div>
         </div>
-        </div>
+        <script src="scripts/fittext.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+        <script src="scripts/jquery.fittext.js"></script>
+        <script type="text/javascript">
+            $("#fittext").fitText(1.1);
+            $("#fittext2").fitText(1.7);
+            $("#fittext3").fitText(1.7);
+            //fitText(document.getElementById('fittext'), 1.2)
+            //fitText(document.getElementByClassName('fitty'), 1.2)
+            //fitText(document.getElementById('fittext3'), 1.2)
+            //fitText(document.getElementById('fittext2'), 1.2)
+        </script>
 	</body>
 </html>
