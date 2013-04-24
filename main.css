@@ -43,11 +43,15 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+/*so they don't go over thier container*/
+img, embed, object, video {
+    max-width: 100%;
+}
 /* End reset styles */
 
 body {
     background-color:#5a5c57;
-    color:#2c2c2c;
+    color:#202020;
     font: normal 100% Georgia, Serif;
     height:100%;
     min-height:100%;
@@ -67,7 +71,7 @@ width:66%;
     right:0;
     margin-top:5px;
     background-color: #7297b4;
-    min-height: 800px;
+    min-height: 500px;
     overflow:hidden;
 }
 
@@ -86,7 +90,7 @@ div#page {
 h1 {
     font-size:3em;
     font-style:italic;
-    padding:0em 1em 0.1em 30px;
+    padding:0em 1em 0.1em 10px;
     letter-spacing: 4px;
     word-spacing: 8px;
     display:inline-block;
@@ -95,7 +99,7 @@ h1 {
 
 h2 {
     font-size:1em;
-    padding:0em 0em 0em 33px;
+    padding:0em 0em 0em 13px;
     letter-spacing: 4px;
     display:block;
     width:100%;
@@ -105,9 +109,11 @@ span.less {
     color:#cdcdcd;:
     font-size:0.9em;
 }
-p { padding:1em;
-    font-family: Helvetica;
-    line-height:120%;
+p { /*padding:1em;
+    /*font: 1em/1.5 serif;*/
+    font-family: "Avenir Next","Helvetica Neue", sans-serif;
+    line-height:130%;
+    margin: 30px 20px 15px 0px;
 }
     
 #fittext3 {
@@ -145,18 +151,15 @@ ul.contact li img{
 
 ul.contact li{
     padding: 0em 1em 0em 0em;
-}
-/*so they don't go over thier container*/
-img, embed, object, video {
-    max-width: 100%;
+    font-size: 110%;
 }
 
 #content {
-        width:66%;
-        line-height: 120%;
-        margin-top: 25px;
-        margin:25px 50px 0 10px;
-    }
+    width:66%;
+    line-height: 120%;
+    margin-top: 25px;
+    margin:25px 50px 0 10px;
+}
 
 @media screen and (max-width:910px) {
     #content {
@@ -164,17 +167,17 @@ img, embed, object, video {
     }
     h1 {
         font-size: 2.5em;
-        }
-    h2 {
-        padding: 0px 0 0em 30px;
-        width:100%;
-        }
-    div#page {
-        width: 95%;}
-#header {
-width:66%;
-}
     }
+    h2 {
+        padding: 0px 0 0em 19px;
+        width:100%;
+    }
+    div#page {
+    width: 95%;}
+    #header {
+        width:66%;
+    }
+}
 
 
 @media screen and (max-width:700px) {
@@ -215,6 +218,7 @@ width:100%;
     ul.contact li{
         display:inline;
         padding-left:10px;
+        font-size:100%;
     }
     img.icon{
         display:none;
