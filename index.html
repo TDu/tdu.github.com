@@ -11,14 +11,14 @@
         <div id ="mountain">
 		<div id="page">
             <div id="header">
-                <h1 id="fittext">Thierry Ducrest</h1>
+                <h1 id="fittext1">Thierry Ducrest</h1>
                 <h2 id="fittext2">Analyste programmeur</h2>
                 <h2 id="fittext3"><span class="less">parfois</span> admin. réseaux</h2>
  <div id="contact">
                     <ul class="contact">
-                        <li><img src="./email.png"/>thierry[at]ducrest.net</li>
-                        <li><img src="./phone.png"/>079 827 8746</li>
-                        <li class="where"><img src="./world.png"/>Nyon</li>
+                        <li><img src="images/email.png"/>thierry[at]ducrest.net</li>
+                        <li><img src="images/phone.png"/>079 827 8746</li>
+                        <li class="where"><img src="images/world.png"/>Nyon, CH</li>
                     </ul>
                 </div>
             </div>
@@ -28,22 +28,19 @@
 			</div>
 			<div class="myheading">
                 <p></p>
-                <p>Lorsqu'il a le choix des outils, une préférence certaine à l'environnement GNU/Linux, qu'il aime explorer. Pour le développement web, après quelques années de PHP/Joomla, il utilise maintenant Python et Flask.</p>
+                <p>Lorsqu'il a le choix des outils, une préférence certaine à l'environnement GNU/Linux, qu'il aime explorer à travers la ligne de commande. Pour le développement web, après quelques années de PHP/Joomla, il utilise maintenant Python et Flask.</p>
 					<p></p>
 			</div>
-            <img class="nut" src="./nutshell.png"/>
+            <img class="nut" src="images/nutshell.png"/>
             </div>
         </div>
         </div>
-        <script src="scripts/fittext.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
         <script src="scripts/jquery.fittext.js"></script>
         <script type="text/javascript">
-            $("#fittext").fitText(1.1);
+            $("#fittext1").fitText(1.1);
             $("#fittext2").fitText(1.7);
             $("#fittext3").fitText(1.7);
-            console.log("yo");
-            console.log($("ul.contact li").first().html().replace('[at]','@'));
             $("ul.contact li").first().html(function(i, html) {
                     return html.replace('[at]','@');
                     });
