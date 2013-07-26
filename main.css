@@ -50,8 +50,8 @@ img, embed, object, video {
 /* End reset styles */
 
 body {
-    background-color:#5a5c57;
-    color:#202020;
+    background-color: #7297b4;
+    color:#101010;
     font: normal 100% Georgia, Serif;
     height:100%;
     min-height:100%;
@@ -63,8 +63,8 @@ width:66%;
 
 #mountain {
     display: block;
-    position:absolute;
-    height:auto;
+    /*position:absolute;*/
+    /*height:auto;*/
     bottom:0;
     top:0;
     left:0;
@@ -79,6 +79,8 @@ div#page {
     width: 850px;
     margin: 0px auto;
     margin-top: 5%;
+    margin-bottom: 2%;
+    padding-bottom: 30px;
     position: relative;
     display:block;
     border: solid 1px #5a5c57;
