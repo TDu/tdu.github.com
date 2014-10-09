@@ -1,57 +1,52 @@
 <!DOCTYPE html>
 <html lang="fr">
-	<head>
-		<meta charset="utf-8"> 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="main.css" />
-		<link rel="shortcut icon" href="favicon.ico" />
-		<title>Thierry Ducrest - analyste programmeur - Nyon</title>
-        <meta name="description" content="Plus de 15 ans d'expérience dans la résolution de problème grâce à l'élaboration de solution logiciel et de construction de base de données relationnelles. Thierry Ducrest, analyste programmeur basé à Nyon spécialiste Python et Flask. Passioné par linux.">
-	</head>
-	<body>
-        <div id ="mountain">
-		<div id="page">
-            <div id="header">
-                <h1 id="fittext1">Thierry Ducrest</h1>
-                <h2 id="fittext2">Analyste programmeur</h2>
-                <h2 id="fittext3"><span class="less">parfois</span> admin. réseaux</h2>
- <div id="contact">
-                    <ul class="contact">
-                        <li><img src="images/email.png"/>thierry[at]ducrest.net</li>
-                        <li><img src="images/phone.png"/>079 827 8746</li>
-                        <li class="where"><img src="images/world.png"/>Nyon, CH</li>
-                    </ul>
-                </div>
-            </div>
-            <div id="content">
-			<div class="myheading">
-                    <p>Thierry Ducrest vit à Nyon (Suisse) avec son épouse et leurs deux enfants. Actuellement il est employé chez <a href="http://www.ntconsulting.ch">NT Consulting</a> où il conçoit et développe des applications .NET et bases de données SQL. Il participe également à la maintenance des réseaux informatiques de quelques PME romandes. Il est titulaire d'un <a href="http://www.idec.ch/Formations-BFI-Presentation.htm">brevet fédéral en informatique</a>.</p>
-			</div>
-			<div class="myheading">
-                <p>Lorsqu'il a le choix des outils, une préférence certaine à l'environnement GNU/Linux, qu'il aime explorer à travers la ligne de commande. Pour le développement web, après quelques années de PHP/Joomla, il utilise maintenant Python et Flask.</p>
-			</div>
-            <img class="nut" src="images/nutshell.png"/>
-            </div>
+<head>
+    <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <title>Thierry Ducrest - analyste programmeur - Nyon</title>
+    <meta name="description" content="Plus de 15 ans d'expérience dans la résolution de problème grâce à l'élaboration de solution logiciel et de construction de base de données relationnelles. Thierry Ducrest, analyste programmeur basé à Nyon spécialiste Python et Flask. Passioné par linux.">
+</head>
+<body>
+    <div id="page">
+        <div id="header">
+            <h1 id="fittext1">Thierry Ducrest</h1>
+            <h2 id="fittext2">Analyste programmeur</h2>
+            <h2 id="fittext3"><span class="less">parfois</span> admin. réseaux</h2>
+            <ul class="contact">
+                <li id="email-contact"><img src="images/envelope.png"/>thierry[at]ducrest.net</li>
+                <li><img src="images/phone.png"/>+56 9 5791 3254</li>
+                <li class="where"><img src="images/earth.png"/>Santiago, Chili</li>
+            </ul>
         </div>
+        <div id="content">
+            <p>Thierry Ducrest est un analyste programmeur de nationalité Suisse vivant à Santiago (Chili) avec son épouse et leurs deux enfants. Actuellement il travaille sur un projet personel d'application web (Python/Flask côté serveur et Javascript/Backbone/Marionette côté client). Il est titulaire d'un <a href="http://www.idec.ch/Formations-BFI-Presentation.htm">brevet fédéral en informatique</a>.</p>
+            <p>Lorsqu'il a le choix des outils, une préférence certaine à l'environnement GNU/Linux, qu'il aime explorer à travers la ligne de commande.</p>
         </div>
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-        <script src="scripts/jquery.fittext.js"></script>
-        <script type="text/javascript">
-            $("#fittext1").fitText(1.1);
-            $("#fittext2").fitText(1.7);
-            $("#fittext3").fitText(1.7);
-            $("ul.contact li").first().html(function(i, html) {
-                    return html.replace('[at]','@');
-                    });
-        </script>
-        <script>
-            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+            <ul class="ontheweb">
+                <li>
+                <a href="http://cl.linkedin.com/pub/thierry-ducrest/4/a39/928"><img src="images/linkedin.png"/></a>
+                </li>
+                <li><a href="http://github.com/TDu"><img src="images/github.png"/></a>
+                </li>
+            </ul>
+    </div>
+    <script src="scripts/fittext.js"></script>
+    <script type="text/javascript">
+        window.fitText(document.getElementById("fittext1"), 1.1);
+        window.fitText(document.getElementById("fittext2"), 1.7);
+        window.fitText(document.getElementById("fittext3"), 1.7);
+        document.getElementById("email-contact").innerHTML = document.getElementById("email-contact").innerHTML.replace("[at]", "@");
+    </script>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-            ga('create', 'UA-41998474-1', 'ducrest.net');
-            ga('send', 'pageview');
-        </script>
-	</body>
+        ga('create', 'UA-41998474-1', 'ducrest.net');
+        ga('send', 'pageview');
+    </script>
+</body>
 </html>

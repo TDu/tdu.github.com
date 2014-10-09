@@ -12,74 +12,71 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
-	display: block;
+    display: block;
 }
+
 body {
-	line-height: 1;
+    line-height: 1;
 }
 ol, ul {
-	list-style: none;
+    list-style: none;
 }
 ul
 blockquote, q {
-	quotes: none;
+    quotes: none;
 }
 blockquote:before, blockquote:after,
 q:before, q:after {
-	content: '';
-	content: none;
+    content: '';
+    content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
-/*so they don't go over thier container*/
+/*so they don't go over their container*/
 img, embed, object, video {
     max-width: 100%;
 }
 /* End reset styles */
 
-body {
-    background-color: #7297b4;
-    color:#101010;
-    font: normal 100% Georgia, Serif;
-    height:100%;
-    min-height:100%;
-    }
-
-#header {
-width:66%;
+html {
+  background: url(images/cerfvolant4.jpg) no-repeat center center fixed;
+  background-color: #6793c5;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
-#mountain {
-    display: block;
-    /*position:absolute;*/
-    /*height:auto;*/
-    bottom:0;
-    top:0;
-    left:0;
-    right:0;
-    margin-top:5px;
-    background-color: #7297b4;
-    min-height: 500px;
-    overflow:hidden;
+body {
+    color: #000000;
+    font: normal 100% Georgia, Serif;
+    height: 100%;
+    min-height: 100%;
+}
+
+#header {
+    width: 66%;
 }
 
 div#page {
-    width: 850px;
-    margin: 0px auto;
+    width: 830px;
+    /*margin: 0px auto;
     margin-top: 5%;
     margin-bottom: 2%;
+    margin-left: 5%;*/
+    margin: 5% 0 2% 5%;
     padding-bottom: 30px;
     position: relative;
     display:block;
@@ -92,7 +89,7 @@ div#page {
 h1 {
     font-size:3em;
     font-style:italic;
-    padding:0em 1em 0.1em 10px;
+    padding:0em 0em 0.1em 10px;
     letter-spacing: 4px;
     word-spacing: 8px;
     display:inline-block;
@@ -111,41 +108,40 @@ span.less {
     color:#cdcdcd;:
     font-size:0.9em;
 }
-p { /*padding:1em;
-    /*font: 1em/1.5 serif;*/
+p {
     font-family: "Avenir Next","Helvetica Neue", sans-serif;
     line-height:150%;
     margin: 30px 20px 15px 0px;
 }
-    
+
 #fittext3 {
     margin-top:-4px;
 }
 
-#contact{
+ul.contact{
     position:absolute;
     top:5px;
     right:5px;
-    background-color: transparent;
-    text-align:right
+    /*background-color: transparent;*/
+    text-align: right;
 }
 
-.myheading {
+ul.ontheweb{
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    text-align: right;
+    padding-right: 1em;
+}
+
+ul.ontheweb li {
+    display: inline;
+    padding-left:5px;
+}
+
+#content p{
     margin-left:5px;
 }
-
-.myheading img{
-    margin-right:130px;
-    margin-top:40px;
-}
-
-#footer{
-    color:#000;
-    font-size:90%;
-    position:absolute;
-    width:100%;
-    bottom: 0;
-    }
 
 ul.contact li img{
     padding: 0.3em 0.3em 0em 0em;
@@ -159,15 +155,8 @@ ul.contact li{
 #content {
     width:66%;
     line-height: 120%;
-    margin-top: 25px;
+    /*margin-top: 25px;*/
     margin:25px 50px 0 10px;
-}
-
-.nut {
-    position:absolute;
-    padding: 20px 20px;
-    right:0px;
-    bottom:0px;
 }
 
 @media screen and (max-width:910px) {
@@ -182,51 +171,51 @@ ul.contact li{
         width:100%;
     }
     div#page {
-    width: 95%;}
+        width: 90%;
+    }
     #header {
         width:66%;
     }
 }
 
-
 @media screen and (max-width:700px) {
+    html{
+        background-image:none;
+    }
     #content {
         width:100%;
     }
-    #contact{
+    ul.contact, ul.ontheweb{
         position: static;
         width:100%;
         margin: 15px 0 0 0;
-        padding: 0 0 0 4%;
+        padding: 0 0 0 0%;
         text-align:left;
     }
     ul.contact li.where {
        display:none;
     }
-    ul.contact li{
+    ul.contact li, ul.ontheweb li{
         display:inline;
         float:center;
         padding-left:10px;
-    }
-    #mountain {
-    background-size: 1100px;
     }
     img.icon{
         display:none;
         width:100%;
     }
-    .myheading{
-    width:93%;
-}
-#header {
-width:100%;
-}
-.nut{
-    display:none;
-}
+    #content p{
+        width:93%;
+    }
+    #header {
+        width:100%;
+    }
 }
 
 @media screen and (max-width:480px) {
+    html{
+        background-image:none;
+    }
     ul.contact li{
         display:inline;
         padding-left:10px;
@@ -236,27 +225,21 @@ width:100%;
         display:none;
         width:100%;
     }
-    #contact{
+    ul.contact{
         position: static;
         width:100%;
         padding: 0 0;
-        padding-left:7%;
         margin: 15px 0 0 0;
         text-align:left;
     }
     ul.contact img {
         display: none;
     }
-
-    .myheading{
-    margin-left:0px;
-    width:93%;
+    #content p{
+        margin-left:0px;
+        width:93%;
     }
-
     #header {
         width:100%;
     }
-.nut{
-    display:none;
-}
 }
