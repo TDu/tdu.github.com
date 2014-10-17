@@ -83,7 +83,7 @@ div#page {
     border: solid 1px #5a5c57;
     zoom: 1;
     background-color: rgba(0,0,0, 0.1);
-    min-width: 350px;
+    min-width: 320px;
 }
 
 h1 {
@@ -241,6 +241,10 @@ ul.contact li{
         width:93%;
     }
     #header {
+        width:100%;
+    }
+    div#page{
+        margin: 0 0;
         width:100%;
     }
 }
