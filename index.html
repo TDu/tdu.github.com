@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="main.css" />
     <link rel="shortcut icon" href="favicon.ico" />
-    <title>Thierry Ducrest - analyste programmeur - Nyon</title>
+    <title>Thierry Ducrest - analyste programmeur - Santiago, Chili</title>
     <meta name="description" content="Plus de 15 ans d'expérience dans la résolution de problème grâce à l'élaboration de solution logiciel et de construction de base de données relationnelles. Thierry Ducrest, analyste programmeur basé à Nyon spécialiste Python et Flask. Passioné par linux.">
 </head>
 <body>
@@ -37,7 +37,8 @@
         window.fitText(document.getElementById("fittext1"), 1.1);
         window.fitText(document.getElementById("fittext2"), 1.7);
         window.fitText(document.getElementById("fittext3"), 1.7);
-        document.getElementById("email-contact").innerHTML = document.getElementById("email-contact").innerHTML.replace("[at]", "@");
+        var $email = document.getElementById("email-contact");
+        $email.innerHTML = $email.innerHTML.replace("[at]", "@");
     </script>
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
