@@ -17,10 +17,11 @@
 
   <link href="http://feeds.thierry.ducrest.net/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Thierry Ducrest Atom" />
 
+<meta name="keywords" content="Web">
 
   <title>
     Thierry Ducrest
-  </title>
+&ndash; Generating my first ssl certificate with letsencrypt  </title>
 
 </head>
 
@@ -51,37 +52,63 @@
 
 <article>
   <div class="article_title">
-    <h3><a href="http://thierry.ducrest.net/managing-locale-with-linux-and-python.html">Managing locale with Linux and Python</a></h3>
-  </div>
-  <div class="article_text">
-    <p>As far as I can remember I have always installed my operating systems to use the english language, maybe because I did not have the luxury of the choice before and it kind of feels more natural now.</p>
-<p>Lately I have had to print names (month, days) of the calendar ...</p>
-  </div>
-</article>
-<hr />
-<article>
-  <div class="article_title">
-    <h3><a href="http://thierry.ducrest.net/ajax-request-blob-content.html">Ajax request and blob content</a></h3>
-  </div>
-  <div class="article_text">
-    <p>The web app I am building as a separate nodejs service than run for the sole purpose of generating pdf files for various content. That service does not have access to the database content but receive on each request the data that needs to be printed. And send back the ...</p>
-  </div>
-</article>
-<hr />
-<article>
-  <div class="article_title">
     <h3><a href="http://thierry.ducrest.net/generating-first-ssl-certificate.html">Generating my first ssl certificate with letsencrypt</a></h3>
   </div>
   <div class="article_text">
     <p>This is the path I followed to generate a ssl certificate for sterna.ch using letsencrypt </p>
 <p>Sterna uses nginx as a webserver in a Docker container running Alpine linux.</p>
 <p>The recommended client software to use is certbot, which is actually packaged by Alpine linux to install : 
-    apk add --no-cache certbot ...</p>
+    apk add --no-cache certbot</p>
+<p>Certbot is used with "plugins" depending of the infrastructure targeted, unfortunately the nginx plugin is not ready yet, so using the webroot one.</p>
+<p>I had some problem getting certbot to work from the docker container getting a PythonDialogBug on execution. On way to get over it was to prefix the command with TERM=xterm {certbot cmd}
+Or to had the text and non-interactive instruction in the config file.</p>
+<p>First test using the staging environement...
+    certbot certonly --staging --config certif.ini</p>
+<p>Using a config file certif.ini :
+    # The configuration file for certbot to get the ssl certificate for Sterna</p>
+<div class="highlight"><pre><span></span># Use a 4096 bit RSA key instead of 2048
+rsa-key-size = 4096
+
+# Uncomment and update to register with the specified e-mail address
+email = thierry@ducrest.net
+
+# Uncomment and update to generate certificates for the specified
+# domains.
+domains = www.sterna.ch
+
+# Uncomment to use a text interface instead of ncurses
+text = True
+#The following and the one above fix the problem PythonDialogBug that I had with Docker
+non-interactive = True
+agree-tos = True
+
+# Uncomment to use the webroot authenticator. Replace webroot-path with the
+# path to the public_html / webroot folder being served by your web server.
+authenticator = webroot
+webroot-path = /usr/html
+# webroot-path = /usr/share/nginx/html
+</pre></div>
+
+
+<p>To test the ssl use : https://www.ssllabs.com/ssltest/ </p>
+<p>To finally generate a real certificate </p>
+<div class="highlight"><pre><span></span>certbot certonly --force-renewal --config certif.ini
+</pre></div>
+
+
+<p>Got the ssl working. Only low point is I have to use a fix ip address otherwise a request pass to the reverse-proxy of the jelastic app engine and it is it that terminate the ssl communication and the common ssl certificate is used.
+See if the custom ssl for Docker will be available soon ?! And I am not even sure that would help with a custom domain.</p>
   </div>
+  <div class="article_meta">
+    <p>Posted on: Thu 06 September 2012</p>
+    <p>Category: <a href="http://thierry.ducrest.net/category/misc.html">misc</a>
+ &ndash; Tags:
+      <a href="http://thierry.ducrest.net/tag/web.html">Web</a>    </p>
+  </div>
+
+
 </article>
 
-<footer>
-</footer>
 
     <div id="ending_message">
         <!--
