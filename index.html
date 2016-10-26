@@ -22,6 +22,17 @@
     Thierry Ducrest
   </title>
 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-41998474-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
 </head>
 
 <body>
@@ -56,27 +67,6 @@
   <div class="article_text">
     <p>As far as I can remember I have always installed my operating systems to use the english language, maybe because I did not have the luxury of the choice before and it kind of feels more natural now.</p>
 <p>Lately I have had to print names (month, days) of the calendar ...</p>
-  </div>
-</article>
-<hr />
-<article>
-  <div class="article_title">
-    <h3><a href="http://thierry.ducrest.net/ajax-request-blob-content.html">Ajax request and blob content</a></h3>
-  </div>
-  <div class="article_text">
-    <p>The web app I am building as a separate nodejs service than run for the sole purpose of generating pdf files for various content. That service does not have access to the database content but receive on each request the data that needs to be printed. And send back the ...</p>
-  </div>
-</article>
-<hr />
-<article>
-  <div class="article_title">
-    <h3><a href="http://thierry.ducrest.net/generating-first-ssl-certificate.html">Generating my first ssl certificate with letsencrypt</a></h3>
-  </div>
-  <div class="article_text">
-    <p>This is the path I followed to generate a ssl certificate for sterna.ch using letsencrypt </p>
-<p>Sterna uses nginx as a webserver in a Docker container running Alpine linux.</p>
-<p>The recommended client software to use is certbot, which is actually packaged by Alpine linux to install : 
-    apk add --no-cache certbot ...</p>
   </div>
 </article>
 

@@ -17,11 +17,11 @@
 
   <link href="http://feeds.thierry.ducrest.net/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Thierry Ducrest Atom" />
 
-<meta name="keywords" content="Linux, Python">
+<meta name="keywords" content="Web">
 
   <title>
     Thierry Ducrest
-&ndash; Managing locale with Linux and Python  </title>
+&ndash; Generating my first ssl certificate with letsencrypt  </title>
 
 <script type="text/javascript">
   var _gaq = _gaq || [];
@@ -63,42 +63,58 @@
 
 <article>
   <div class="article_title">
-    <h3><a href="http://thierry.ducrest.net/managing-locale-with-linux-and-python.html">Managing locale with Linux and Python</a></h3>
+    <h3><a href="http://thierry.ducrest.net/drafts/generating-first-ssl-certificate.html">Generating my first ssl certificate with letsencrypt</a></h3>
   </div>
   <div class="article_text">
-    <p>As far as I can remember I have always installed my operating systems to use the english language, maybe because I did not have the luxury of the choice before and it kind of feels more natural now.</p>
-<p>Lately I have had to print names (month, days) of the calendar in french using Python, so I dig a little in "locale", which are the set of parameters that configure the language and region settings used by the system.</p>
-<p>On Debian to get the list of "locale" installed</p>
-<div class="highlight"><pre><span></span>locale -a
+    <p>This is the path I followed to generate a ssl certificate for sterna.ch using letsencrypt </p>
+<p>Sterna uses nginx as a webserver in a Docker container running Alpine linux.</p>
+<p>The recommended client software to use is certbot, which is actually packaged by Alpine linux to install : 
+    apk add --no-cache certbot</p>
+<p>Certbot is used with "plugins" depending of the infrastructure targeted, unfortunately the nginx plugin is not ready yet, so using the webroot one.</p>
+<p>I had some problem getting certbot to work from the docker container getting a PythonDialogBug on execution. On way to get over it was to prefix the command with TERM=xterm {certbot cmd}
+Or to had the text and non-interactive instruction in the config file.</p>
+<p>First test using the staging environement...
+    certbot certonly --staging --config certif.ini</p>
+<p>Using a config file certif.ini :
+    # The configuration file for certbot to get the ssl certificate for Sterna</p>
+<div class="highlight"><pre><span></span># Use a 4096 bit RSA key instead of 2048
+rsa-key-size = 4096
+
+# Uncomment and update to register with the specified e-mail address
+email = thierry@ducrest.net
+
+# Uncomment and update to generate certificates for the specified
+# domains.
+domains = www.sterna.ch
+
+# Uncomment to use a text interface instead of ncurses
+text = True
+#The following and the one above fix the problem PythonDialogBug that I had with Docker
+non-interactive = True
+agree-tos = True
+
+# Uncomment to use the webroot authenticator. Replace webroot-path with the
+# path to the public_html / webroot folder being served by your web server.
+authenticator = webroot
+webroot-path = /usr/html
+# webroot-path = /usr/share/nginx/html
 </pre></div>
 
 
-<p>To choose which "locale" to make available on the system you can manually edit the file locale.gen by removing the # in front of the line you want activated, followed by the command to generate the modification :</p>
-<div class="highlight"><pre><span></span>sudo vim /etc/locale.gen
-locale-gen
+<p>To test the ssl use : https://www.ssllabs.com/ssltest/ </p>
+<p>To finally generate a real certificate </p>
+<div class="highlight"><pre><span></span>certbot certonly --force-renewal --config certif.ini
 </pre></div>
 
 
-<p>Or simply run this configuration command :</p>
-<div class="highlight"><pre><span></span>sudo dpkg-reconfigure locales
-</pre></div>
-
-
-<p>Now that the correct "locale" is installed on the system, it is possible to display a date with the months and days in the desired language :</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">locale</span>
-<span class="kn">import</span> <span class="nn">datetime.date</span>
-
-<span class="n">d</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
-<span class="n">locale</span><span class="o">.</span><span class="n">setlocale</span><span class="p">(</span><span class="n">locale</span><span class="o">.</span><span class="n">LC_ALL</span><span class="p">,</span> <span class="s1">&#39;fr_CH.utf8&#39;</span><span class="p">)</span>
-
-<span class="n">d</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%d</span><span class="s1"> %B %Y&#39;</span><span class="p">)</span>
-</pre></div>
+<p>Got the ssl working. Only low point is I have to use a fix ip address otherwise a request pass to the reverse-proxy of the jelastic app engine and it is it that terminate the ssl communication and the common ssl certificate is used.
+See if the custom ssl for Docker will be available soon ?! And I am not even sure that would help with a custom domain.</p>
   </div>
   <div class="article_meta">
-    <p>Posted on: Tue 20 September 2016</p>
-    <p>Category: <a href="http://thierry.ducrest.net/category/it.html">IT</a>
+    <p>Posted on: Thu 06 September 2012</p>
+    <p>Category: <a href="http://thierry.ducrest.net/category/misc.html">misc</a>
  &ndash; Tags:
-      <a href="http://thierry.ducrest.net/tag/linux.html">Linux</a>,      <a href="http://thierry.ducrest.net/tag/python.html">Python</a>    </p>
+      <a href="http://thierry.ducrest.net/tag/web.html">Web</a>    </p>
   </div>
 
 

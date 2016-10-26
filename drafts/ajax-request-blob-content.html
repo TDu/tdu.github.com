@@ -17,10 +17,11 @@
 
   <link href="http://feeds.thierry.ducrest.net/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Thierry Ducrest Atom" />
 
+<meta name="keywords" content="Web">
 
   <title>
     Thierry Ducrest
-&ndash; Posts by: Thierry Ducrest  </title>
+&ndash; Ajax request and blob content  </title>
 
 <script type="text/javascript">
   var _gaq = _gaq || [];
@@ -57,22 +58,30 @@
       <p>
       <a href="http://thierry.ducrest.net">Index</a> &brvbar; <a href="http://thierry.ducrest.net/archives.html">Archives</a>
       &brvbar; <a href="http://feeds.thierry.ducrest.net/feeds/all.atom.xml">Atom</a>
-&gt; Author: Thierry Ducrest
       </p>
     </header>
 
 <article>
   <div class="article_title">
-    <h3><a href="http://thierry.ducrest.net/managing-locale-with-linux-and-python.html">Managing locale with Linux and Python</a></h3>
+    <h3><a href="http://thierry.ducrest.net/drafts/ajax-request-blob-content.html">Ajax request and blob content</a></h3>
   </div>
   <div class="article_text">
-    <p>As far as I can remember I have always installed my operating systems to use the english language, maybe because I did not have the luxury of the choice before and it kind of feels more natural now.</p>
-<p>Lately I have had to print names (month, days) of the calendar ...</p>
+    <p>The web app I am building as a separate nodejs service than run for the sole purpose of generating pdf files for various content. That service does not have access to the database content but receive on each request the data that needs to be printed. And send back the binary data corresponding of the pdf file generated that will be offered to download to the user.</p>
+<p>The first version used a GET request but there is a limit with the length of the data that can be passed this way. The limit (between 2kb-5kb) varies from browser and server type and it is recommended not to use this method above 255 bytes.</p>
+<p>The switch to a POST request was not that straight forward, I could not understand why the pdf received by the client were always badly formed and unreadable. Turns out that the jquery ajax method does not support the blob format.</p>
+<p>This is <a href="https://bugs.jquery.com/ticket/7248">the bug</a> marked as won't fix</p>
+<p>All for the best it made me switch to XMLHttpRequest.</p>
   </div>
+  <div class="article_meta">
+    <p>Posted on: Tue 06 September 2016</p>
+    <p>Category: <a href="http://thierry.ducrest.net/category/misc.html">misc</a>
+ &ndash; Tags:
+      <a href="http://thierry.ducrest.net/tag/web.html">Web</a>    </p>
+  </div>
+
+
 </article>
 
-<footer>
-</footer>
 
     <div id="ending_message">
         <!--
