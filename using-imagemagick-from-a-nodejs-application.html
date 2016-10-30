@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- ## for client-side less
+  <link rel="stylesheet/less" type="text/css" href="http://thierry.ducrest.net/theme/css/style.less">
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/less.js/1.7.3/less.min.js" type="text/javascript"></script>
+  -->
+  <link rel="stylesheet" type="text/css" href="http://thierry.ducrest.net/theme/css/style.css">
+  <link rel="stylesheet" type="text/css" href="http://thierry.ducrest.net/theme/css/pygments.css">
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=PT+Sans|PT+Serif|PT+Mono">
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Thierry Ducrest">
+  <meta name="description" content="Posts and writings by Thierry Ducrest">
+
+  <link href="http://feeds.thierry.ducrest.net/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Thierry Ducrest Atom" />
+
+<meta name="keywords" content="JavaScript, NodeJs, ImageMagick">
+
+  <title>
+    Thierry Ducrest
+&ndash; Using ImageMagick from a NodeJs application  </title>
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-41998474-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</head>
+
+<body>
+  <aside>
+    <div id="user_meta">
+      <a href="http://thierry.ducrest.net">
+        <img src="http://thierry.ducrest.net/theme/images/empty.png" alt="logo">
+      </a>
+      <h2><a href="http://thierry.ducrest.net">Thierry Ducrest</a></h2>
+      <p>Hi, I am an analyst programer and web developer from Geneva Switzerland</p>
+      <ul>
+        <li><a href="http://thierry.ducrest.net/pages/about.html">About</a></li>
+        <li><a href="http://thierry.ducrest.net/pages/resume.html">Resume</a></li>
+        <li><a href="https://github.com/TDu" target="_blank">Github</a></li>
+        <li><a href="https://cl.linkedin.com/in/thierry-ducrest-928a394" target="_blank">LinkedIn</a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <main>
+    <header>
+      <p>
+      <a href="http://thierry.ducrest.net">Index</a> &brvbar; <a href="http://thierry.ducrest.net/archives.html">Archives</a>
+      &brvbar; <a href="http://feeds.thierry.ducrest.net/feeds/all.atom.xml">Atom</a>
+      </p>
+    </header>
+
+<article>
+  <div class="article_title">
+    <h3><a href="http://thierry.ducrest.net/using-imagemagick-from-a-nodejs-application.html">Using ImageMagick from a NodeJs application</a></h3>
+  </div>
+  <div class="article_text">
+    <p>Lately when I needed to convert files from PDF to an image file format I was not surprised to find ImageMagick the best option for the job. I had used it before from the command line and knew to be a great piece of software.</p>
+<p>And naturally, when wanting to integrate that PDF to PNG conversion in my current NodeJs application, I searched npm for a module easing that integration. Faced with a lot of choices (that's what you get from 300'000 building blocks) I read the description of a handful, tried a couple and ended picking one to build my solution with.</p>
+<p>But later, I hit a bug. The module I chose, the bug I hit, are not relevant. I had moved my code in a Docker container, the operating system was different, my code was not running as expected and my PDF files were not converted correctly anymore.</p>
+<p>After looking a while for a solution without success. I made sure that ImageMagick in my container was working properly from the command line and decided to ditch the module I had chosen and implemented my own solution :</p>
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">spawn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;child_process&#39;</span><span class="p">).</span><span class="nx">spawn</span><span class="p">;</span>
+<span class="c1">// The arguments used to call convert from ImageMagick</span>
+<span class="kd">var</span> <span class="nx">args</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;pdf:-&#39;</span><span class="p">,</span> <span class="s1">&#39;-density&#39;</span><span class="p">,</span> <span class="s1">&#39;100&#39;</span><span class="p">,</span> <span class="s1">&#39;png:-&#39;</span><span class="p">];</span>
+<span class="kd">var</span> <span class="nx">convert</span> <span class="o">=</span> <span class="nx">spawn</span><span class="p">(</span><span class="s1">&#39;convert&#39;</span><span class="p">,</span> <span class="nx">args</span><span class="p">);</span>
+
+<span class="c1">// Redirect any errors that may happen to the standard error</span>
+<span class="nx">convert</span><span class="p">.</span><span class="nx">stderr</span><span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">stderr</span><span class="p">);</span>
+<span class="c1">// Pipe in my pdf data</span>
+<span class="nx">pdfDoc</span><span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">convert</span><span class="p">.</span><span class="nx">stdin</span><span class="p">);</span>
+<span class="nx">convert</span><span class="p">.</span><span class="nx">stdout</span><span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">myStream</span><span class="p">);</span>
+</pre></div>
+
+
+<p>Ah yes it'is not files that are converted but streams of data. Faster.</p>
+<p>And my solution works without another required module with it's own dependencies.</p>
+  </div>
+  <div class="article_meta">
+    <p>Posted on: Sun 30 October 2016</p>
+    <p>Category: <a href="http://thierry.ducrest.net/category/it.html">IT</a>
+ &ndash; Tags:
+      <a href="http://thierry.ducrest.net/tag/javascript.html">JavaScript</a>,      <a href="http://thierry.ducrest.net/tag/nodejs.html">NodeJs</a>,      <a href="http://thierry.ducrest.net/tag/imagemagick.html">ImageMagick</a>    </p>
+  </div>
+
+
+</article>
+
+
+    <div id="ending_message">
+        <!--
+      <p>&copy; Thierry Ducrest. Built using <a href="http://getpelican.com" target="_blank">Pelican</a>.</p>
+        -->
+    </div>
+  </main>
+</body>
+</html>
