@@ -25,6 +25,9 @@ ul li {
     line-height: 3em;
 }
 
+aside {
+    background-image: url('../images/cork-wallet.png');
+}
 aside div#user_meta {
   padding: 40px;
   text-align: center;
@@ -52,7 +55,7 @@ aside div#user_meta ul li a {
   border-radius: 15px;
   -moz-border-radius: 15px;
   -webkit-border-radius: 15px;
-  color: #999999;
+  /*color: #999999;*/
 }
 main header {
   padding: 20px 40px;
