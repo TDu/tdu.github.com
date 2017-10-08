@@ -6,6 +6,7 @@
   <link rel="stylesheet/less" type="text/css" href="http://thierry.ducrest.net/theme/css/style.less">
   <script src="http://cdnjs.cloudflare.com/ajax/libs/less.js/1.7.3/less.min.js" type="text/javascript"></script>
   -->
+  <link rel="stylesheet" href="http://thierry.ducrest.net/theme/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="http://thierry.ducrest.net/theme/css/style.css">
   <link rel="stylesheet" type="text/css" href="http://thierry.ducrest.net/theme/css/pygments.css">
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=PT+Sans|PT+Serif|PT+Mono">
@@ -15,28 +16,38 @@
   <meta name="author" content="Thierry Ducrest">
   <meta name="description" content="Posts and writings by Thierry Ducrest">
 
-  <link href="http://feeds.thierry.ducrest.net/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Thierry Ducrest Atom" />
+  <link href="http://feeds.thierry.ducrest.net/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title=" Atom" />
 
 
   <title>
-    Thierry Ducrest
+    
 &ndash; Tag: Web  </title>
 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-41998474-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
 </head>
 
 <body>
   <aside>
     <div id="user_meta">
       <a href="http://thierry.ducrest.net">
-        <img src="http://localhost:8000/theme/images/empty.png" alt="logo">
+        <img src="http://thierry.ducrest.net/theme/images/empty.png" alt="logo">
       </a>
       <h2><a href="http://thierry.ducrest.net">Thierry Ducrest</a></h2>
-      <p>Hi, I am an analyst programer and web developer from Geneva Switzerland</p>
+      <p>Fullstack web developer</p>
       <ul>
-        <li><a href="http://thierry.ducrest.net/pages/about.html">About</a></li>
-        <li><a href="http://thierry.ducrest.net/pages/resume.html">Resume</a></li>
-        <li><a href="https://github.com/TDu" target="_blank">Github</a></li>
-        <li><a href="https://cl.linkedin.com/in/thierry-ducrest-928a394" target="_blank">LinkedIn</a></li>
+        <li><a href="https://github.com/TDu" target="_blank"><i class="fa fa-github fa-lg"></i></a></li>
+        <li><a href="https://cl.linkedin.com/in/thierry-ducrest-928a394" target="_blank"><i class="fa fa-linkedin-square fa-lg"></i></a></li>
+        <li><a href="https://twitter.com/thducrest" target="_blank"><i class="fa fa-twitter fa-lg"></i></a></li>
       </ul>
     </div>
   </aside>
@@ -50,29 +61,19 @@
       </p>
     </header>
 
-<article>
-  <div class="article_title">
-    <h3><a href="http://thierry.ducrest.net/ajax-request-blob-content.html">Ajax request and blob content</a></h3>
-  </div>
-  <div class="article_text">
-    <p>The web app I am building as a separate nodejs service than run for the sole purpose of generating pdf files for various content. That service does not have access to the database content but receive on each request the data that needs to be printed. And send back the ...</p>
-  </div>
-</article>
-<hr />
-<article>
-  <div class="article_title">
-    <h3><a href="http://thierry.ducrest.net/generating-first-ssl-certificate.html">Generating my first ssl certificate with letsencrypt</a></h3>
-  </div>
-  <div class="article_text">
-    <p>This is the path I followed to generate a ssl certificate for sterna.ch using letsencrypt </p>
-<p>Sterna uses nginx as a webserver in a Docker container running Alpine linux.</p>
-<p>The recommended client software to use is certbot, which is actually packaged by Alpine linux to install : 
-    apk add --no-cache certbot ...</p>
-  </div>
-</article>
+    <article>
+        <h3><a href="http://thierry.ducrest.net/ajax-request-blob-content.html">Ajax request and blob content</a></h3>
+        <span class="date-article">06 September 2016</span>
+        <div class="article-text">
+            <p>The web app I am building as a separate nodejs service than run for the sole purpose of generating pdf files for various content. That service does not have access to the database content but receive on each request the data that needs to be printed. And send back the ...</p>
+        </div>
+        <a href="http://thierry.ducrest.net/ajax-request-blob-content.html" class="read-more">
+            <i class="fa fa-eye"></i>Keep reading
+        </a>
+    </article>
 
-<footer>
-</footer>
+    <footer>
+    </footer>
 
     <div id="ending_message">
         <!--

@@ -18,7 +18,7 @@
 
   <link href="http://feeds.thierry.ducrest.net/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title=" Atom" />
 
-<meta name="keywords" content="Python, Alembic, Database">
+    <meta name="keywords" content="Python, Alembic, Database">
 
   <title>
     
@@ -48,6 +48,7 @@
       <ul>
         <li><a href="https://github.com/TDu" target="_blank"><i class="fa fa-github fa-lg"></i></a></li>
         <li><a href="https://cl.linkedin.com/in/thierry-ducrest-928a394" target="_blank"><i class="fa fa-linkedin-square fa-lg"></i></a></li>
+        <li><a href="https://twitter.com/thducrest" target="_blank"><i class="fa fa-twitter fa-lg"></i></a></li>
       </ul>
     </div>
   </aside>
@@ -61,10 +62,9 @@
     </header>
 
 <article>
-  <div class="article_title">
     <h3><a href="http://thierry.ducrest.net/error-upgrading-database-with-alembic.html">Error upgrading database with Alembic</a></h3>
-  </div>
-  <div class="article_text">
+    <span class="date-article">12 November 2016</span>
+    <div class="article_text">
     <p>On my last project I started using <a href="https://bitbucket.org/zzzeek/alembic/overview">Alembic</a>  as a migration tool for the database, which is a new thing for me.<br />
 Before that I used to simply keep a file with the modifications applied to the developement database between each release version and patch the test and production datbase accordingly. Some of the drawbacks to this method are a risk of manipulation error and it is very difficult to reverse the changes when they are applied.</p>
 <p>Today while performing an upgrade on the production database running Postgresql with Alembic :</p>
@@ -88,7 +88,7 @@ when updating <span class="s1">&#39;7b4f4b275d5b&#39;</span> to <span class="s1"
 
 
 <p>I do not know why there was two entries in the table but removing one fixed the problem.</p>
-  </div>
+    </div>
   <div class="article_meta">
     <p>Posted on: Sat 12 November 2016</p>
     <p>Category: <a href="http://thierry.ducrest.net/category/it.html">IT</a>

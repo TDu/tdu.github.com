@@ -18,7 +18,7 @@
 
   <link href="http://feeds.thierry.ducrest.net/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title=" Atom" />
 
-<meta name="keywords" content="JavaScript, NodeJs, ImageMagick">
+    <meta name="keywords" content="JavaScript, NodeJs, ImageMagick">
 
   <title>
     
@@ -48,6 +48,7 @@
       <ul>
         <li><a href="https://github.com/TDu" target="_blank"><i class="fa fa-github fa-lg"></i></a></li>
         <li><a href="https://cl.linkedin.com/in/thierry-ducrest-928a394" target="_blank"><i class="fa fa-linkedin-square fa-lg"></i></a></li>
+        <li><a href="https://twitter.com/thducrest" target="_blank"><i class="fa fa-twitter fa-lg"></i></a></li>
       </ul>
     </div>
   </aside>
@@ -61,10 +62,9 @@
     </header>
 
 <article>
-  <div class="article_title">
     <h3><a href="http://thierry.ducrest.net/using-imagemagick-from-a-nodejs-application.html">Using ImageMagick from a NodeJs application</a></h3>
-  </div>
-  <div class="article_text">
+    <span class="date-article">30 October 2016</span>
+    <div class="article_text">
     <p>Lately when I needed to convert files from PDF to an image file format I was not surprised to find ImageMagick the best option for the job. I had used it before from the command line and knew to be a great piece of software.</p>
 <p>And naturally, when wanting to integrate that PDF to PNG conversion in my current NodeJs application, I searched npm for a module easing that integration. Faced with a lot of choices (that's what you get from 300'000 building blocks) I read the description of a handful, tried a couple and ended picking one to build my solution with.</p>
 <p>But later, I hit a bug. The module I chose, the bug I hit, are not relevant. I had moved my code in a Docker container, the operating system was different, my code was not running as expected and my PDF files were not converted correctly anymore.</p>
@@ -84,7 +84,7 @@
 
 <p>Ah yes it'is not files that are converted but streams of data. Faster.</p>
 <p>And my solution works without another required module with it's own dependencies.</p>
-  </div>
+    </div>
   <div class="article_meta">
     <p>Posted on: Sun 30 October 2016</p>
     <p>Category: <a href="http://thierry.ducrest.net/category/it.html">IT</a>
