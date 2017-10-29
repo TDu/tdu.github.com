@@ -44,7 +44,7 @@
         <img src="http://thierry.ducrest.net/theme/images/empty.png" alt="logo">
       </a>
       <h2><a href="http://thierry.ducrest.net">Thierry Ducrest</a></h2>
-      <p>Fullstack web developer</p>
+      <p>Software Developer</p>
       <ul>
         <li><a href="https://github.com/TDu" target="_blank"><i class="fa fa-github fa-lg"></i></a></li>
         <li><a href="https://cl.linkedin.com/in/thierry-ducrest-928a394" target="_blank"><i class="fa fa-linkedin-square fa-lg"></i></a></li>
@@ -65,12 +65,17 @@
     <h3><a href="http://thierry.ducrest.net/drafts/pelican-page-404.html">Pelican page 404</a></h3>
     <span class="date-article">10 October 2017</span>
     <div class="article_text">
-    <p>There is two type of content in Pelican : articles and pages.</p>
-<p>In the content directory, pages are by convention stored in <code>./pages</code>. But a content file (I use Markdown) in other directory will be parsed as well.</p>
-<p>The template used by default for pages is page.html, but a different one can be set in the metadata of the page thanks to this <a href="https://github.com/getpelican/pelican/issues/376">PR</a></p>
-<div class="highlight"><pre><span></span><span class="n">Title</span><span class="o">:</span> <span class="mi">404</span>
-<span class="n">Date</span><span class="o">:</span> <span class="mi">08</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">2017</span>
-<span class="n">Template</span><span class="o">:</span> <span class="mi">404</span>
+    <p>To implement a 404 page for </p>
+<div class="highlight"><pre><span></span>STATIC_PATHS = [
+    &#39;static&#39;
+]
+EXTRA_PATH_METADATA = {
+    &#39;static/404.html&#39;: {&#39;path&#39;: &#39;404.html&#39;},
+}
+
+ARTICLE_EXCLUDES = [
+    &#39;static&#39;
+]
 </pre></div>
     </div>
   <div class="article_meta">
